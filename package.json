@@ -23,6 +23,8 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.7.3",
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
     "@vitejs/plugin-vue": "^5.0.5",
