@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { RouterView } from 'vue-router'
-</script>
-
 <template>
   <div class="container">
     <div class="header">
@@ -23,7 +19,6 @@ import { RouterView } from 'vue-router'
   grid-template-columns: 200px 1fr;
   width: 100vw;
   height: 100vh;
-  background-color: #f5f5f5;
 
   .left {
     grid-row: 1 / span 2;
@@ -32,6 +27,10 @@ import { RouterView } from 'vue-router'
 
   .header {
     background-color: lightblue;
+  }
+
+  .main {
+    background-color: #f5f5f5;
   }
 }
 </style>

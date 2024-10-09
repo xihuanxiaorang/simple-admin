@@ -28,3 +28,6 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+src/typings/auto-imports.d.ts
+src/typings/components.d.ts
