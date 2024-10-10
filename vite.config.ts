@@ -4,6 +4,8 @@ import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import AutoImport from 'unplugin-auto-import/vite'
+import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
@@ -21,6 +23,8 @@ export default defineConfig({
       resolvers: [
         // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
         ElementPlusResolver(),
+        // 自动导入图标组件
+        IconsResolver(),
       ],
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
       // 自动导入 VueRouter 相关函数，如：useRouter 等
@@ -36,6 +40,11 @@ export default defineConfig({
       resolvers: [
         // 自动导入 Element Plus 组件
         ElementPlusResolver(),
+        // 自动注册图标组件
+        IconsResolver({
+          // 只启用 element-plus 图标集，其他图标库 https://icon-sets.iconify.design/
+          enabledCollections: ['ep'],
+        }),
       ],
       // 组件名称包含目录，防止同名组件冲突
       directoryAsNamespace: true,
@@ -43,6 +52,10 @@ export default defineConfig({
       dirs: ['src/components', 'src/**/components'],
       // 指定自动导入组件TS类型声明文件路径，为true时在项目根目录自动创建，为false时关闭自动生成
       dts: resolve(pathSrc, 'typings', 'components.d.ts'),
+    }),
+    Icons({
+      // 自动安装图标库
+      autoInstall: true,
     }),
   ],
   resolve: {

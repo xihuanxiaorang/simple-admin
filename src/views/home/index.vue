@@ -38,6 +38,12 @@ const date = ref('')
       type="date"
       placeholder="选择日期"
     />
+    <div>
+      <i-ep-user />
+      <el-icon :size="50" color="#1976D2">
+        <i-ep-edit />
+      </el-icon>
+    </div>
   </div>
 </template>
 
