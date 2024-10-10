@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useCounterStore } from '@/stores/counter'
+
 function handleClick() {
   ElMessage({
     message: 'Congrats, this is a success message.',
@@ -6,16 +8,20 @@ function handleClick() {
   })
 }
 
-const num = ref(1)
 const date = ref('')
+
+const { count } = storeToRefs(useCounterStore())
+function handleChange(value: number | undefined) {
+  count.value = value
+}
 </script>
 
 <template>
   <div class="wrapper">
     <h1>Home</h1>
     <div>
-      <el-button @click="num++">
-        {{ num }}
+      <el-button>
+        Default
       </el-button>
       <el-button type="primary">
         Primary
@@ -44,6 +50,7 @@ const date = ref('')
         <i-ep-edit />
       </el-icon>
     </div>
+    <el-input-number v-model="count" :min="1" :max="10" @change="handleChange" />
   </div>
 </template>
 
