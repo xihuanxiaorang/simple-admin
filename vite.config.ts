@@ -29,8 +29,9 @@ export default defineConfig({
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
       // 自动导入 VueRouter 相关函数，如：useRouter 等
       // 自动导入 Pinia 相关函数，如：createPinia，defineStore，storeToRefs 等
+      // 自动导入 @vueuse/core 相关函数，如：useStorage、useTitle 等
       // 参考自： https://github.com/sxzz/element-plus-best-practices/blob/main/vite.config.ts
-      imports: ['vue', 'vue-router', 'pinia'],
+      imports: ['vue', 'vue-router', 'pinia', '@vueuse/core'],
       // 是否在 vue 模板中自动导入
       vueTemplate: true,
       // 指定自动导入函数TS类型声明文件路径，为true时在项目根目录自动创建，为false时关闭自动生成
