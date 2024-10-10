@@ -14,6 +14,9 @@ const { count } = storeToRefs(useCounterStore())
 function handleChange(value: number | undefined) {
   count.value = value
 }
+
+const icons = import.meta.glob('../../assets/icons/*.svg', { eager: true })
+const iconNames = Object.keys(icons).map(key => key.replace(/.*\/([^/]+)\.svg$/, '$1'))
 </script>
 
 <template>
@@ -54,5 +57,8 @@ function handleChange(value: number | undefined) {
       </el-icon>
     </div>
     <el-input-number v-model="count" class="mt-[10px]" :min="1" :max="10" @change="handleChange" />
+    <div class="mt-[10px] text-6xl">
+      <svg-icon v-for="icon in iconNames" :key="icon" :icon-class="icon" />
+    </div>
   </div>
 </template>
