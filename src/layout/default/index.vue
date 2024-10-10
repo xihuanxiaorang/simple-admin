@@ -1,36 +1,13 @@
 <template>
-  <div class="container">
-    <div class="header">
+  <div class="w-screen h-screen grid grid-rows-[84px_1fr] grid-cols-[200px_1fr]">
+    <div class="bg-[lightblue]">
       Header
     </div>
-    <div class="left">
+    <div class="bg-[lightgreen] row-start-1 row-span-2">
       Left
     </div>
-    <div class="main">
+    <div class="bg-[#f5f5f5]">
       <RouterView />
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped>
-.container {
-  display: grid;
-  grid-template-rows: 84px 1fr;
-  grid-template-columns: 200px 1fr;
-  width: 100vw;
-  height: 100vh;
-
-  .left {
-    grid-row: 1 / span 2;
-    background-color: lightgreen;
-  }
-
-  .header {
-    background-color: lightblue;
-  }
-
-  .main {
-    background-color: #f5f5f5;
-  }
-}
-</style>
