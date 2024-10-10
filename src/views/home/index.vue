@@ -17,9 +17,11 @@ function handleChange(value: number | undefined) {
 </script>
 
 <template>
-  <div class="wrapper">
-    <h1>Home</h1>
-    <div>
+  <div class="w-full h-full p-[10px]">
+    <h1 class="text-5xl font-bold text-orange-600 mt-[10px]">
+      Home
+    </h1>
+    <div class="mt-[10px]">
       <el-button>
         Default
       </el-button>
@@ -41,25 +43,16 @@ function handleChange(value: number | undefined) {
     </div>
     <el-date-picker
       v-model="date"
+      class="mt-[10px]"
       type="date"
       placeholder="选择日期"
     />
-    <div>
+    <div class="mt-[10px] flex items-center">
       <i-ep-user />
       <el-icon :size="50" color="#1976D2">
         <i-ep-edit />
       </el-icon>
     </div>
-    <el-input-number v-model="count" :min="1" :max="10" @change="handleChange" />
+    <el-input-number v-model="count" class="mt-[10px]" :min="1" :max="10" @change="handleChange" />
   </div>
 </template>
-
-<style lang="scss" scoped>
-.wrapper {
-  padding: 10px;
-
-  > :nth-child(n + 2) {
-    margin-top: 10px;
-  }
-}
-</style>
