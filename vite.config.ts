@@ -9,6 +9,7 @@ import Icons from 'unplugin-icons/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
 const pathSrc = resolve(__dirname, 'src')
@@ -26,6 +27,8 @@ export default defineConfig({
         // 自动导入图标组件
         IconsResolver(),
       ],
+      // 自动导入项目中的公共组件
+      dirs: ['src/components', 'src/**/components'],
       // 自动导入 Vue 相关函数，如：ref, reactive, toRef 等
       // 自动导入 VueRouter 相关函数，如：useRouter 等
       // 自动导入 Pinia 相关函数，如：createPinia，defineStore，storeToRefs 等
@@ -57,6 +60,12 @@ export default defineConfig({
     Icons({
       // 自动安装图标库
       autoInstall: true,
+    }),
+    createSvgIconsPlugin({
+      // 指定需要缓存的图标文件夹
+      iconDirs: [resolve(pathSrc, 'assets/icons')],
+      // 指定symbolId格式
+      symbolId: 'icon-[dir]-[name]',
     }),
   ],
   resolve: {
