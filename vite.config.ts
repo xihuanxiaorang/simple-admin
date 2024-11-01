@@ -38,7 +38,7 @@ export default defineConfig({
       // 是否在 vue 模板中自动导入
       vueTemplate: true,
       // 指定自动导入函数TS类型声明文件路径，为true时在项目根目录自动创建，为false时关闭自动生成
-      dts: resolve(pathSrc, 'typings', 'auto-imports.d.ts'),
+      dts: resolve(pathSrc, 'types', 'auto-imports.d.ts'),
     }),
     Components({
       resolvers: [
@@ -55,7 +55,7 @@ export default defineConfig({
       // 指定自定义组件位置(默认:src/components)
       dirs: ['src/components', 'src/**/components'],
       // 指定自动导入组件TS类型声明文件路径，为true时在项目根目录自动创建，为false时关闭自动生成
-      dts: resolve(pathSrc, 'typings', 'components.d.ts'),
+      dts: resolve(pathSrc, 'types', 'components.d.ts'),
     }),
     Icons({
       // 自动安装图标库
@@ -79,5 +79,10 @@ export default defineConfig({
         api: 'modern-compiler',
       },
     },
+  },
+  server: {
+    host: '0.0.0.0',
+    open: true,
+    hmr: true,
   },
 })

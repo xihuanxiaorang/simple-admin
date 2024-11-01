@@ -1,6 +1,8 @@
 import type { App } from 'vue'
-import { setup as setupRouter } from '@/router/index'
+import { setupPinia } from './pinia'
+import { setupRouter } from './router'
 
 export default function setupPlugins(app: App<Element>) {
   setupRouter(app)
+  setupPinia(app)
 }

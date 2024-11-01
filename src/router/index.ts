@@ -1,4 +1,3 @@
-import type { App } from 'vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 /**
@@ -40,13 +39,5 @@ const router = createRouter({
   // 刷新时，滚动条位置还原
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
-
-/**
- * 用于将路由实例注册到Vue实例上
- * @param app Vue实例
- */
-export function setup(app: App<Element>) {
-  app.use(router)
-}
 
 export default router
