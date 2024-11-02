@@ -1,3 +1,4 @@
+import type { App } from 'vue'
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 /**
@@ -6,7 +7,7 @@ import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 const constantRoutes: RouteRecordRaw[] = [
   {
     path: '/',
-    component: () => import('@/layout/default/index.vue'),
+    component: () => import('@/layout/index.vue'),
     redirect: '/home',
     children: [
       {
@@ -39,5 +40,13 @@ const router = createRouter({
   // 刷新时，滚动条位置还原
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })
+
+/**
+ * 注册路由插件
+ * @param app Vue实例
+ */
+export function setupRouter(app: App) {
+  app.use(router)
+}
 
 export default router

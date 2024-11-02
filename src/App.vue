@@ -1,3 +1,11 @@
+<script lang="ts" setup>
+import { useAppStore } from '@/stores'
+
+const { locale } = storeToRefs(useAppStore())
+</script>
+
 <template>
-  <RouterView />
+  <el-config-provider :locale="locale">
+    <router-view />
+  </el-config-provider>
 </template>

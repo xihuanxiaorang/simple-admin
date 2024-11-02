@@ -1,6 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import setupPlugins from './plugins'
+import { setupPlugins } from './plugins'
 import '@/styles/index.scss'
 import 'virtual:svg-icons-register'
 

@@ -46,8 +46,8 @@ export default defineConfig({
         ElementPlusResolver(),
         // 自动注册图标组件
         IconsResolver({
-          // 只启用 element-plus 图标集，其他图标库 https://icon-sets.iconify.design/
-          enabledCollections: ['ep'],
+          // 只启用 icon-park 图标集，其他图标库 https://icon-sets.iconify.design/
+          enabledCollections: ['icon-park-outline'],
         }),
       ],
       // 组件名称包含目录，防止同名组件冲突

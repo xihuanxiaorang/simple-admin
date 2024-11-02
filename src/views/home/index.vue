@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import type { ECOption } from '@/hooks/echarts'
-import { useCounterStore } from '@/stores/counter'
+import { useCounterStore } from '@/stores/modules/counter'
 
 function handleClick() {
   ElMessage({
@@ -103,9 +103,9 @@ const chartOptions2 = ref<ECOption>({
       type="date"
     />
     <div class="mt-[10px] flex items-center">
-      <i-ep-user />
+      <i-icon-park-outline-user />
       <el-icon :size="50" color="#1976D2">
-        <i-ep-edit />
+        <i-icon-park-outline-edit-two />
       </el-icon>
     </div>
     <el-input-number
