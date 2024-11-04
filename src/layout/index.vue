@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import NavBar from './components/NavBar/index.vue'
+import Sidebar from './components/Sidebar/index.vue'
 </script>
 
 <template>
@@ -7,11 +8,15 @@ import NavBar from './components/NavBar/index.vue'
     class="w-screen h-screen grid grid-rows-[50px_1fr] grid-cols-[210px_1fr]"
   >
     <NavBar />
-    <div class="bg-[lightgreen] row-start-1 row-span-2">
-      Left
-    </div>
-    <div class="bg-[#f5f5f5]">
+    <Sidebar />
+    <div class="app-main">
       <RouterView />
     </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.app-main {
+  background-color: var(--el-bg-color-page);
+}
+</style>

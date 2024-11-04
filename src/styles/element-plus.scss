@@ -1,0 +1,12 @@
+:root {
+  --el-color-primary: #4080ff;
+  --el-color-success: #23c343;
+  --el-color-warning: #ff9a2e;
+  --el-color-danger: #f76560;
+  --el-color-info: #a9aeb8;
+  --el-bg-color: #f5f8fd;
+}
+
+html.dark {
+  --el-bg-color-page: #000;
+}

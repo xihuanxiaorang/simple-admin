@@ -27,7 +27,7 @@ function changeLanguage(lang: string) {
 <template>
   <el-dropdown trigger="click" @command="changeLanguage">
     <el-icon :size="props.iconSize">
-      <i-icon-park-outline-translate />
+      <svg-icon icon-class="language" />
     </el-icon>
     <template #dropdown>
       <el-dropdown-menu>

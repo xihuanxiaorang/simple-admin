@@ -1,1 +1,25 @@
-@use "tailwind";
+@use 'tailwind';
+@use 'element-plus/theme-chalk/dark/css-vars.css';
+@use "element-plus";
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  mix-blend-mode: normal;
+  animation: none;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+
+.dark::view-transition-new(root) {
+  z-index: 1;
+}

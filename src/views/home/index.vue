@@ -75,7 +75,7 @@ const chartOptions2 = ref<ECOption>({
 
 <template>
   <div class="w-full h-full p-[10px]">
-    <h1 class="text-5xl font-bold text-orange-600 mt-[10px]">
+    <h1 class="text-5xl font-bold text-orange-600 mt-[10px] dark:text-blue-300">
       Home
     </h1>
     <div class="mt-[10px]">
@@ -103,9 +103,9 @@ const chartOptions2 = ref<ECOption>({
       type="date"
     />
     <div class="mt-[10px] flex items-center">
-      <i-icon-park-outline-user />
+      <i-ep-user />
       <el-icon :size="50" color="#1976D2">
-        <i-icon-park-outline-edit-two />
+        <i-ep-edit />
       </el-icon>
     </div>
     <el-input-number

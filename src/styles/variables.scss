@@ -1,0 +1,12 @@
+:root {
+  --sidebar-background: #304156;
+  --sidebar-text: #bfcbd9;
+}
+
+html.dark {
+  --sidebar-background: var(--el-bg-color-overlay);
+  --sidebar-text: #fff;
+}
+
+$sidebar-background: var(--sidebar-background);
+$sidebar-text: var(--sidebar-text);
