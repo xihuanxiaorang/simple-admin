@@ -115,7 +115,7 @@ const chartOptions2 = ref<ECOption>({
       class="mt-[10px]"
       @change="handleChange"
     />
-    <div class="mt-[10px] text-6xl">
+    <div class="mt-[10px] text-6xl flex gap-3">
       <svg-icon v-for="icon in iconNames" :key="icon" :icon-class="icon" />
     </div>
     <div class="mt-5 rounded-md">
