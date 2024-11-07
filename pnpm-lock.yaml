@@ -8,6 +8,9 @@ dependencies:
   '@vueuse/core':
     specifier: ^11.1.0
     version: 11.1.0(vue@3.5.11)
+  animate.css:
+    specifier: ^4.1.1
+    version: 4.1.1
   echarts:
     specifier: ^5.5.1
     version: 5.5.1
@@ -37,9 +40,9 @@ devDependencies:
   '@commitlint/config-conventional':
     specifier: ^19.5.0
     version: 19.5.0
-  '@iconify/json':
-    specifier: ^2.2.258
-    version: 2.2.258
+  '@iconify-json/ep':
+    specifier: ^1.1.15
+    version: 1.1.15
   '@tsconfig/node20':
     specifier: ^20.1.4
     version: 20.1.4
@@ -1156,11 +1159,10 @@ packages:
     engines: {node: '>=18.18'}
     dev: true
 
-  /@iconify/json@2.2.258:
-    resolution: {integrity: sha512-BW622A/EZ5651qOYkPkXn906U1bLsk/Cv/rYtmkArbZz/h+0c4WdcdrAHiC+weMqjQIUxB1JE20bpERT79BFIg==}
+  /@iconify-json/ep@1.1.15:
+    resolution: {integrity: sha512-96JBJQrJhxYy+j+KE5lqyE+Y6O+06fVUdMaHJ1Rb9+bbOjI1tw6EwYl9H4SB6Hkf7zB80VX6GgG0yH0Z0c8K1Q==}
     dependencies:
       '@iconify/types': 2.0.0
-      pathe: 1.1.2
     dev: true
 
   /@iconify/types@2.0.0:
@@ -1978,6 +1980,10 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
     dev: true
+
+  /animate.css@4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-escapes@4.3.2:
     resolution: {integrity: sha512-gKXj5ALrKWQLsYG9jlTRmR/xKluxHV+Z9QEwNIgCfM1/uwPMCuzVVnh5mwTd+OuBZcwSIMbqssNWRm1lE51QaQ==}

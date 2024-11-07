@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import type { ECOption } from '@/hooks/echarts'
-import { useCounterStore } from '@/stores/modules/counter'
 
 function handleClick() {
   ElMessage({
@@ -10,12 +9,6 @@ function handleClick() {
 }
 
 const date = ref('')
-
-const { count } = storeToRefs(useCounterStore())
-
-function handleChange(value: number | undefined) {
-  count.value = value
-}
 
 const icons = import.meta.glob('../../assets/icons/*.svg', { eager: true })
 const iconNames = Object.keys(icons).map(key =>
@@ -71,6 +64,8 @@ const chartOptions2 = ref<ECOption>({
     },
   ],
 })
+
+const visible = ref(true)
 </script>
 
 <template>
@@ -108,13 +103,6 @@ const chartOptions2 = ref<ECOption>({
         <i-ep-edit />
       </el-icon>
     </div>
-    <el-input-number
-      v-model="count"
-      :max="10"
-      :min="1"
-      class="mt-[10px]"
-      @change="handleChange"
-    />
     <div class="mt-[10px] text-6xl flex gap-3">
       <svg-icon v-for="icon in iconNames" :key="icon" :icon-class="icon" />
     </div>
@@ -138,6 +126,22 @@ const chartOptions2 = ref<ECOption>({
           <Chart :options="chartOptions2" class="!h-72" />
         </el-card>
       </section>
+    </div>
+    <div class="mt-5 rounded-md p-5 w-1/2 bg-[var(--el-bg-color)]">
+      <transition
+        enter-active-class="animate__animated animate__bounceInLeft"
+        leave-active-class="animate__animated animate__bounceOutLeft"
+      >
+        <h1
+          v-show="visible"
+          class="text-5xl font-bold text-orange-600 dark:text-blue-300"
+        >
+          An animated element
+        </h1>
+      </transition>
+      <el-button class="mt-2" type="primary" @click="visible = !visible">
+        显示/隐藏
+      </el-button>
     </div>
   </div>
 </template>

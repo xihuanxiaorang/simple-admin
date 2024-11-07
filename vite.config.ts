@@ -24,8 +24,6 @@ export default defineConfig({
       resolvers: [
         // 自动导入 Element Plus 相关函数，如：ElMessage, ElMessageBox... (带样式)
         ElementPlusResolver(),
-        // 自动导入图标组件
-        IconsResolver(),
       ],
       // 自动导入项目中的公共组件
       dirs: ['src/components', 'src/**/components'],
@@ -60,6 +58,8 @@ export default defineConfig({
     Icons({
       // 自动安装图标库
       autoInstall: true,
+      // 编译方式
+      compiler: 'vue3',
     }),
     createSvgIconsPlugin({
       // 指定需要缓存的图标文件夹

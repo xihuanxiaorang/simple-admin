@@ -1,20 +1,21 @@
 import type { App } from 'vue'
 import { LanguageEnum } from '@/enums/LanguageEnum'
-import { useAppStoreHook } from '@/stores'
+import defaultSettings from '@/settings'
 import { createI18n } from 'vue-i18n'
 // 本地语言包
 import enUS from './package/en-us'
 import zhCN from './package/zh-cn'
 
 export type MessageSchema = typeof zhCN
-const appStore = useAppStoreHook()
+
+const locale = useStorage('language', defaultSettings.language).value
 
 const i18n = createI18n<
   [MessageSchema],
   LanguageEnum.ZH_CN | LanguageEnum.EN_US
 >({
   legacy: false,
-  locale: appStore.language,
+  locale,
   fallbackLocale: LanguageEnum.ZH_CN,
   messages: {
     [LanguageEnum.ZH_CN]: zhCN,

@@ -11,5 +11,4 @@ export function setupPinia(app: App) {
 }
 
 export * from './modules/app'
-export * from './modules/counter'
 export { store }
