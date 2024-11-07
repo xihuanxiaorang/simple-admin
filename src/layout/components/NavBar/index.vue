@@ -1,9 +1,11 @@
 <script lang="ts" setup></script>
 
 <template>
-  <div class="flex justify-between items-center px-3 nav-bar">
-    <div />
-    <div class="flex items-center justify-center gap-3">
+  <div class="navbar">
+    <div class="navbar-left">
+      <Hamburger />
+    </div>
+    <div class="navbar-right">
       <FullScreen />
       <DarkModeSelect />
       <LangSelect />
@@ -12,7 +14,15 @@
 </template>
 
 <style lang="scss" scoped>
-.nav-bar {
-  background-color: var(--el-bg-color);
+.navbar {
+  @apply w-full h-full flex justify-between items-center px-4;
+
+  .navbar-left {
+    @apply flex items-center;
+  }
+
+  .navbar-right {
+    @apply flex items-center justify-center gap-3;
+  }
 }
 </style>
