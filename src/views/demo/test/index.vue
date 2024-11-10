@@ -10,7 +10,9 @@ function handleClick() {
 
 const date = ref('')
 
-const icons = import.meta.glob('../../assets/icons/*.svg', { eager: true })
+const icons = import.meta.glob('../../../assets/icons/*.svg', {
+  eager: true,
+})
 const iconNames = Object.keys(icons).map(key =>
   key.replace(/.*\/([^/]+)\.svg$/, '$1'),
 )

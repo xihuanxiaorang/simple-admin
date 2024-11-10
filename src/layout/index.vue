@@ -18,7 +18,7 @@ const { isSidebarCollapsed } = storeToRefs(useAppStore())
       <el-header class="header-container">
         <NavBar />
       </el-header>
-      <el-main class="app-main">
+      <el-main class="main-container">
         <router-view />
       </el-main>
     </el-container>
@@ -33,8 +33,8 @@ const { isSidebarCollapsed } = storeToRefs(useAppStore())
     @apply transition-[width] duration-300 ease-in-out;
 
     width: $sidebar-width;
-    color: $sidebar-text;
-    background-color: $sidebar-background;
+    color: var(--el-menu-text-color);
+    background-color: var(--el-menu-bg-color);
 
     &.collapsed {
       width: $sidebar-width-collapsed;
@@ -48,7 +48,7 @@ const { isSidebarCollapsed } = storeToRefs(useAppStore())
     background-color: var(--el-bg-color);
   }
 
-  .app-main {
+  .main-container {
     background-color: var(--el-bg-color-page);
   }
 }

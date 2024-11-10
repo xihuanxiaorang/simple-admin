@@ -7,12 +7,21 @@ const constantRoutes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('@/layout/index.vue'),
-    redirect: '/test',
+    redirect: '/dashboard',
     children: [
       {
-        path: 'test',
-        name: 'test',
-        component: () => import('@/views/test/index.vue'),
+        path: 'dashboard',
+        name: 'Dashboard',
+        component: () => import('@/views/dashboard/index.vue'),
+        meta: { title: '首页', icon: 'home' },
+      },
+      {
+        path: '401',
+        component: () => import('@/views/error/401/index.vue'),
+      },
+      {
+        path: '404',
+        component: () => import('@/views/error/404/index.vue'),
       },
     ],
   },
@@ -20,11 +29,6 @@ const constantRoutes: RouteRecordRaw[] = [
     path: '/login',
     name: 'Login',
     component: () => import('@/views/login/index.vue'),
-  },
-  {
-    path: '/:pathMatch(.*)*',
-    name: '404',
-    component: () => import('@/views/error/404/index.vue'),
   },
 ]
 

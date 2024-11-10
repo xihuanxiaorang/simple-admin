@@ -5,4 +5,14 @@
   --el-color-danger: #f76560;
   --el-color-info: #a9aeb8;
   --el-bg-color: #f5f8fd;
+  --el-menu-bg-color: #304156 !important; // 菜单文字颜色
+  --el-menu-text-color: #bfcbd9 !important; // 菜单文字颜色
+  --el-menu-hover-bg-color: #263445 !important; // 菜单悬停背景色
 }
+
+html.dark {
+  --el-menu-bg-color: var(--el-bg-color-overlay) !important;
+  --el-menu-text-color: #fff !important;
+  --el-menu-hover-bg-color: rgb(0 0 0 / 20%) !important;
+}
+
